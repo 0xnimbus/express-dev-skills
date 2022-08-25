@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Skills</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    This is going to be fun 
+    <h1>Skills</h1>
+    <ul>
+      <% skills.forEach(function(s) { %> 
+        <li> 
+          <p> Skill: </p>
+          <%= s.skillName %> 
+          <p> Description: </p>
+          <%=s.skillDesc %> 
+        </li>
+        <form method="POST" action ="/skills/<%=s.id%>?_method=DELETE"> 
+        <input type="submit" value="Remove">
+        </form>
+      <% }) %> 
+      
+    </ul>
+    <a href="/skills/addskill"> Add a new skill </a> 
+  </body>
+</html>
